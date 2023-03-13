@@ -1,0 +1,19 @@
+﻿@model extraMalzemeCartViewModel
+
+<form asp-controller="Sepet" asp-action="Index" method="post">
+    <div class="card container pt-4">
+        <div class="card-body">
+            <h1> @Model.extraMalzeme.Ad</h1>
+            <label asp-for="Adet"></label>
+            <input asp-for="Adet" class="form-control" type="text" />
+            <input  asp-for="extraMalzeme.Fiyat" hidden/>
+            <input asp-for="extraMalzeme.Ad" hidden />
+            <button class="btn btn-outline-warning">Siparis Ekle</button>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+
+</form>

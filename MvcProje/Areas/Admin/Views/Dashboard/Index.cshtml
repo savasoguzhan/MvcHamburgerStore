@@ -1,0 +1,93 @@
+﻿@using MvcProje.Areas.Identity.Data.Classes;
+@model MalzemeMenuViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container m-2 mb-5 text-center">
+    <div class="text-start d-flex m-2">
+        <img src="~/admin/img/adminlogo.jpeg" width="200px" height="200px"  />
+    <h2 class="m-3">  Beefy Bites Urun Ve Menu Listesi</h2>
+    </div>
+
+
+
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Extra Malzeme Listesi</h2>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Ad
+                        </th>
+                        <th>Fiyat</th>
+                        <th>Resim</th>
+                        <th>Eklenme Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var item in Model.extramalzemeler)
+                        {
+                            <tr>
+                                <td>@item.Ad</td>
+                                <td>@item.Fiyat</td>
+
+                                <td>
+                                    <img height="60px" width="60px" alt="resim yok" src="~/img/@item.Resim">
+                                </td>
+                                <td>@item.EklenmeTarihi</td>
+                               
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h2>Menu Listesi</h2>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Ad
+                        </th>
+                        <th>Fiyat</th>
+                        <th>Resim</th>
+                        <th>Eklenme Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var item in Model.Menuler)
+                        {
+                            <tr>
+                                <td>@item.MenuAd</td>
+                                <td>@item.MenuFiyat</td>
+
+                                <td>
+                                    <img height="60" width="60" alt="resim yok" src="~/img/@item.Resim">
+                                </td>
+                                <td>@item.EklenmeTarihi</td>
+                             
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+<

@@ -1,0 +1,38 @@
+﻿@using MvcProje.Areas.Identity.Data.Classes;
+@model Menu
+<div class="card">
+    <div class="card-header"><h1 class="bg-info text-center"> Menu Ekle</h1></div>
+
+
+    <div class="card-body">
+
+        <form asp-action="Ekle" asp-area="Admin" asp-controller="Menu" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+
+                <label asp-for="MenuAd"> Product Name</label>
+                <input asp-for="MenuAd" class="form-control" />
+
+            </div>
+            <div class="form-group">
+
+                <label asp-for="MenuFiyat"> Product Price</label>
+                <input asp-for="MenuFiyat" class="form-control" />
+                <span asp-validation-for="MenuFiyat"></span>
+
+            </div>
+
+            @*buraya resim eklemek icin alan koyucaz*@
+            <div class="form-group">
+                <label asp-for="Resim">Resim ekleme</label>
+                <input asp-for="Resim" type="file" class="form-control" />
+                ">
+
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Menu  Ekle</button>
+
+        </form>
+
+    </div>
+
+</div>

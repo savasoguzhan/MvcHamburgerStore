@@ -1,0 +1,50 @@
+﻿@using MvcProje.Areas.Identity.Data.Classes;
+@model List<Menu>
+
+<div class="container p-3">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>Price</th>
+                <th>Picture</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MenuAd</td>
+                        <td>@item.MenuFiyat</td>
+
+                        <td>
+                            <img height="60" width="60" alt="resim yok" src="~/img/@item.Resim">
+                        </td>
+                        <td> <a asp-action="Sil" asp-route-id="@item.Id" class="btn btn-danger"> <i class="bi bi-trash3-fill"></i> DELETE</a> </td>
+                        <td> <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-success">  <i class="bi bi-arrow-down-up"></i> UPDATE</a> </td>
+                        <td></td>
+                    </tr>
+
+                }
+            }
+        </tbody>
+
+    </table>
+</div>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2> Yeni Menu Ekle</h2>
+
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Menu" asp-action="Ekle" class="btn btn-outline-info">EKLE</a>
+        </div>
+
+    </div>
+
+</div>

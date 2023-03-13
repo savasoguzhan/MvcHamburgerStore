@@ -1,0 +1,50 @@
+﻿#thanks {
+    position: relative;
+    animation: kayan 6s linear infinite;
+    animation-delay: 3s; /* Animasyonun başlangıç gecikmesi */
+    animation-fill-mode: both; /* Animasyonun başlangıç ve bitiş değerlerini korur */
+}
+@keyframes kayan {
+    0% {
+        left: 0;
+        transform: translateX(0); /* X ekseninde hiçbir değişiklik yok */
+    }
+
+    30% {
+        transform: translateX(30px); /* X ekseninde 30 piksel sağa kaydır */
+    }
+
+    60% {
+        transform: translateX(15px); /* X ekseninde 15 piksel sola kaydır */
+    }
+
+    90% {
+        transform: translateX(30px); /* X ekseninde 30 piksel sağa kaydır */
+    }
+
+    100% {
+        left: 100%;
+        transform: translateX(0); /* Son pozisyonu koru */
+    }
+}
+
+
+#resim {
+    animation-name: nefes-al-ver;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes nefes-al-ver {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,20 @@
+﻿@model ShoppingCart
+
+
+<form asp-controller="Sepet" asp-action="Index" method="post">
+    <div class="card container pt-4">
+        <div class="card-body">
+            <h1> @Model.Menu.MenuAd</h1>
+            <label asp-for="Adet"></label>
+            <input asp-for="Adet" class="form-control" type="text" />
+            <input  asp-for="Menu.MenuFiyat" hidden/>
+            <input asp-for="Menu.MenuAd" hidden />
+            <button class="btn btn-outline-warning mt-3">Siparis Ekle</button>
+        </div>
+        <div>
+            
+        </div>
+
+    </div>
+
+</form>

@@ -1,0 +1,26 @@
+﻿@model ShoppingCart
+
+
+
+<div class="container">
+    <div>
+        <h2 class="text-white">CheckOut</h2>
+    </div>
+@{
+    if(Model != null && Model.Menu != null)
+    {
+        double miktar = Model.Adet * Model.Menu.MenuFiyat;
+        <h1 class="bg-white text-black">
+        
+           @Model.Menu.MenuAd ( @Model.Menu.MenuFiyat X @Model.Adet) = @miktar TL
+        </h1>
+    }
+}
+
+
+</div>
+<div class="container mt-3">
+    <a class="btn btn-success" asp-controller="home" asp-action="EndOfOrder"> <i class="bi bi-cash-coin"></i> Siparisi Tamala</a>
+</div>
+
+
